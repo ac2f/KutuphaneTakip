@@ -1,0 +1,12 @@
+D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\bin\x64\Debug\KutuphaneTakip.exe.config
+D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\bin\x64\Debug\KutuphaneTakip.exe
+D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\bin\x64\Debug\KutuphaneTakip.pdb
+D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.csproj.AssemblyReference.cache
+D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.csproj.SuggestedBindingRedirects.cache
+D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.Formlar.Uye.Uyeİslemleri.resources
+D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.Properties.Resources.resources
+D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.csproj.GenerateResource.cache
+D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.csproj.CoreCompileInputs.cache
+D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.exe
+D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.pdb
+D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.AnaForm.resources
