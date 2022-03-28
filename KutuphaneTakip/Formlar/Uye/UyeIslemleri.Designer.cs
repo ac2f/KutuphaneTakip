@@ -65,14 +65,15 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(798, 29);
+            this.panel1.Size = new System.Drawing.Size(800, 29);
             this.panel1.TabIndex = 13;
             // 
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.IndianRed;
+            this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.ForeColor = System.Drawing.Color.Black;
             this.button9.Location = new System.Drawing.Point(773, 3);
@@ -355,7 +356,7 @@
             this.btnYenile.UseVisualStyleBackColor = true;
             this.btnYenile.Click += new System.EventHandler(this.btnYenile_Click);
             // 
-            // Uyeİslemleri
+            // UyeIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -386,7 +387,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Uyeİslemleri";
+            this.Name = "UyeIslemleri";
             this.Text = "UyeEkle";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -73,6 +73,12 @@
     <Compile Include="AnaForm.Designer.cs">
       <DependentUpon>AnaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\EmanetKitap\EmanetKitap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\EmanetKitap\EmanetKitap.Designer.cs">
+      <DependentUpon>EmanetKitap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\Kitap\KitapIslemleri.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\EmanetKitap\EmanetKitap.resx">
+      <DependentUpon>EmanetKitap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Kitap\KitapIslemleri.resx">
       <DependentUpon>KitapIslemleri.cs</DependentUpon>

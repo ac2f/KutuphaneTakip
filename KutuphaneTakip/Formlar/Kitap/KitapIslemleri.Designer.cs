@@ -35,11 +35,10 @@
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnEkle = new System.Windows.Forms.Button();
-            this.numYas = new System.Windows.Forms.NumericUpDown();
-            this.numOkunanKitapSayisi = new System.Windows.Forms.NumericUpDown();
-            this.cmbCinsiyet = new System.Windows.Forms.ComboBox();
+            this.numSayfaSayisi = new System.Windows.Forms.NumericUpDown();
+            this.numStokSayisi = new System.Windows.Forms.NumericUpDown();
+            this.cmbTürü = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -47,16 +46,17 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtEposta = new System.Windows.Forms.TextBox();
-            this.txtAdres = new System.Windows.Forms.TextBox();
-            this.txtTelefon = new System.Windows.Forms.TextBox();
-            this.txtSoyad = new System.Windows.Forms.TextBox();
-            this.txtAd = new System.Windows.Forms.TextBox();
-            this.txtTcNo = new System.Windows.Forms.TextBox();
+            this.txtAciklama = new System.Windows.Forms.TextBox();
+            this.txtRafNo = new System.Windows.Forms.TextBox();
+            this.txtYazari = new System.Windows.Forms.TextBox();
+            this.txtKitapAdi = new System.Windows.Forms.TextBox();
+            this.txtKitapBarkodNo = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtYayinEvi = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numYas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numOkunanKitapSayisi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSayfaSayisi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numStokSayisi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,211 +141,188 @@
             this.btnEkle.UseVisualStyleBackColor = true;
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
-            // numYas
+            // numSayfaSayisi
             // 
-            this.numYas.BackColor = System.Drawing.Color.IndianRed;
-            this.numYas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numYas.ForeColor = System.Drawing.SystemColors.Control;
-            this.numYas.Location = new System.Drawing.Point(123, 137);
-            this.numYas.Maximum = new decimal(new int[] {
+            this.numSayfaSayisi.BackColor = System.Drawing.Color.IndianRed;
+            this.numSayfaSayisi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numSayfaSayisi.ForeColor = System.Drawing.SystemColors.Control;
+            this.numSayfaSayisi.Location = new System.Drawing.Point(120, 164);
+            this.numSayfaSayisi.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
-            this.numYas.Name = "numYas";
-            this.numYas.Size = new System.Drawing.Size(144, 20);
-            this.numYas.TabIndex = 52;
-            this.numYas.ValueChanged += new System.EventHandler(this.textChangedEvent);
+            this.numSayfaSayisi.Name = "numSayfaSayisi";
+            this.numSayfaSayisi.Size = new System.Drawing.Size(144, 20);
+            this.numSayfaSayisi.TabIndex = 52;
+            this.numSayfaSayisi.ValueChanged += new System.EventHandler(this.textChangedEvent);
             // 
-            // numOkunanKitapSayisi
+            // numStokSayisi
             // 
-            this.numOkunanKitapSayisi.BackColor = System.Drawing.Color.IndianRed;
-            this.numOkunanKitapSayisi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numOkunanKitapSayisi.ForeColor = System.Drawing.SystemColors.Control;
-            this.numOkunanKitapSayisi.Location = new System.Drawing.Point(123, 268);
-            this.numOkunanKitapSayisi.Name = "numOkunanKitapSayisi";
-            this.numOkunanKitapSayisi.Size = new System.Drawing.Size(144, 20);
-            this.numOkunanKitapSayisi.TabIndex = 51;
-            this.numOkunanKitapSayisi.ValueChanged += new System.EventHandler(this.textChangedEvent);
+            this.numStokSayisi.BackColor = System.Drawing.Color.IndianRed;
+            this.numStokSayisi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numStokSayisi.ForeColor = System.Drawing.SystemColors.Control;
+            this.numStokSayisi.Location = new System.Drawing.Point(120, 189);
+            this.numStokSayisi.Name = "numStokSayisi";
+            this.numStokSayisi.Size = new System.Drawing.Size(144, 20);
+            this.numStokSayisi.TabIndex = 51;
+            this.numStokSayisi.ValueChanged += new System.EventHandler(this.textChangedEvent);
             // 
-            // cmbCinsiyet
+            // cmbTürü
             // 
-            this.cmbCinsiyet.BackColor = System.Drawing.Color.IndianRed;
-            this.cmbCinsiyet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbCinsiyet.FormattingEnabled = true;
-            this.cmbCinsiyet.Location = new System.Drawing.Point(123, 163);
-            this.cmbCinsiyet.Name = "cmbCinsiyet";
-            this.cmbCinsiyet.Size = new System.Drawing.Size(144, 21);
-            this.cmbCinsiyet.TabIndex = 50;
-            this.cmbCinsiyet.TextChanged += new System.EventHandler(this.textChangedEvent);
+            this.cmbTürü.BackColor = System.Drawing.Color.IndianRed;
+            this.cmbTürü.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbTürü.FormattingEnabled = true;
+            this.cmbTürü.Location = new System.Drawing.Point(120, 214);
+            this.cmbTürü.Name = "cmbTürü";
+            this.cmbTürü.Size = new System.Drawing.Size(144, 21);
+            this.cmbTürü.TabIndex = 50;
+            this.cmbTürü.TextChanged += new System.EventHandler(this.textChangedEvent);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.SystemColors.Control;
-            this.label16.Location = new System.Drawing.Point(12, 275);
+            this.label16.Location = new System.Drawing.Point(42, 190);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(105, 13);
+            this.label16.Size = new System.Drawing.Size(62, 13);
             this.label16.TabIndex = 48;
-            this.label16.Text = "Okunan Kitap Sayısı:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.SystemColors.Control;
-            this.label17.Location = new System.Drawing.Point(71, 248);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(46, 13);
-            this.label17.TabIndex = 49;
-            this.label17.Text = "E-posta:";
+            this.label16.Text = "Stok Sayısı:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Location = new System.Drawing.Point(80, 221);
+            this.label10.Location = new System.Drawing.Point(51, 274);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 13);
+            this.label10.Size = new System.Drawing.Size(53, 13);
             this.label10.TabIndex = 46;
-            this.label10.Text = "Adres:";
+            this.label10.Text = "Açıklama:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(71, 194);
+            this.label11.Location = new System.Drawing.Point(60, 240);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 13);
+            this.label11.Size = new System.Drawing.Size(44, 13);
             this.label11.TabIndex = 47;
-            this.label11.Text = "Telefon:";
+            this.label11.Text = "Raf No:";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.SystemColors.Control;
-            this.label12.Location = new System.Drawing.Point(71, 167);
+            this.label12.Location = new System.Drawing.Point(72, 215);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(46, 13);
+            this.label12.Size = new System.Drawing.Size(32, 13);
             this.label12.TabIndex = 44;
-            this.label12.Text = "Cinsiyet:";
+            this.label12.Text = "Türü:";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.SystemColors.Control;
-            this.label13.Location = new System.Drawing.Point(89, 140);
+            this.label13.Location = new System.Drawing.Point(50, 140);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(28, 13);
+            this.label13.Size = new System.Drawing.Size(54, 13);
             this.label13.TabIndex = 45;
-            this.label13.Text = "Yaş:";
+            this.label13.Text = "Yayın Evi:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(76, 113);
+            this.label9.Location = new System.Drawing.Point(65, 115);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.Size = new System.Drawing.Size(39, 13);
             this.label9.TabIndex = 43;
-            this.label9.Text = "Soyad:";
+            this.label9.Text = "Yazarı:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(94, 86);
+            this.label7.Location = new System.Drawing.Point(52, 90);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(23, 13);
+            this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 42;
-            this.label7.Text = "Ad:";
+            this.label7.Text = "Kitap Adı:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(76, 59);
+            this.label6.Location = new System.Drawing.Point(16, 65);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 41;
-            this.label6.Text = "TC No:";
+            this.label6.Text = "Kitap Barkod No:";
             // 
-            // txtEposta
+            // txtAciklama
             // 
-            this.txtEposta.BackColor = System.Drawing.Color.IndianRed;
-            this.txtEposta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEposta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtEposta.Location = new System.Drawing.Point(123, 242);
-            this.txtEposta.MaxLength = 45;
-            this.txtEposta.Multiline = true;
-            this.txtEposta.Name = "txtEposta";
-            this.txtEposta.Size = new System.Drawing.Size(144, 20);
-            this.txtEposta.TabIndex = 39;
-            this.txtEposta.TextChanged += new System.EventHandler(this.textChangedEvent);
+            this.txtAciklama.BackColor = System.Drawing.Color.IndianRed;
+            this.txtAciklama.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAciklama.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtAciklama.Location = new System.Drawing.Point(120, 265);
+            this.txtAciklama.MaxLength = 150;
+            this.txtAciklama.Multiline = true;
+            this.txtAciklama.Name = "txtAciklama";
+            this.txtAciklama.Size = new System.Drawing.Size(144, 39);
+            this.txtAciklama.TabIndex = 38;
+            this.txtAciklama.TextChanged += new System.EventHandler(this.textChangedEvent);
             // 
-            // txtAdres
+            // txtRafNo
             // 
-            this.txtAdres.BackColor = System.Drawing.Color.IndianRed;
-            this.txtAdres.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAdres.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtAdres.Location = new System.Drawing.Point(123, 216);
-            this.txtAdres.MaxLength = 60;
-            this.txtAdres.Multiline = true;
-            this.txtAdres.Name = "txtAdres";
-            this.txtAdres.Size = new System.Drawing.Size(144, 20);
-            this.txtAdres.TabIndex = 38;
-            this.txtAdres.TextChanged += new System.EventHandler(this.textChangedEvent);
+            this.txtRafNo.BackColor = System.Drawing.Color.IndianRed;
+            this.txtRafNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRafNo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtRafNo.Location = new System.Drawing.Point(120, 240);
+            this.txtRafNo.MaxLength = 15;
+            this.txtRafNo.Multiline = true;
+            this.txtRafNo.Name = "txtRafNo";
+            this.txtRafNo.Size = new System.Drawing.Size(144, 20);
+            this.txtRafNo.TabIndex = 37;
+            this.txtRafNo.TextChanged += new System.EventHandler(this.textChangedEvent);
             // 
-            // txtTelefon
+            // txtYazari
             // 
-            this.txtTelefon.BackColor = System.Drawing.Color.IndianRed;
-            this.txtTelefon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTelefon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtTelefon.Location = new System.Drawing.Point(123, 190);
-            this.txtTelefon.MaxLength = 15;
-            this.txtTelefon.Multiline = true;
-            this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(144, 20);
-            this.txtTelefon.TabIndex = 37;
-            this.txtTelefon.TextChanged += new System.EventHandler(this.textChangedEvent);
+            this.txtYazari.BackColor = System.Drawing.Color.IndianRed;
+            this.txtYazari.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtYazari.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtYazari.Location = new System.Drawing.Point(122, 114);
+            this.txtYazari.MaxLength = 25;
+            this.txtYazari.Multiline = true;
+            this.txtYazari.Name = "txtYazari";
+            this.txtYazari.Size = new System.Drawing.Size(144, 20);
+            this.txtYazari.TabIndex = 36;
+            this.txtYazari.TextChanged += new System.EventHandler(this.textChangedEvent);
             // 
-            // txtSoyad
+            // txtKitapAdi
             // 
-            this.txtSoyad.BackColor = System.Drawing.Color.IndianRed;
-            this.txtSoyad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSoyad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtSoyad.Location = new System.Drawing.Point(123, 111);
-            this.txtSoyad.MaxLength = 45;
-            this.txtSoyad.Multiline = true;
-            this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(144, 20);
-            this.txtSoyad.TabIndex = 36;
-            this.txtSoyad.TextChanged += new System.EventHandler(this.textChangedEvent);
+            this.txtKitapAdi.BackColor = System.Drawing.Color.IndianRed;
+            this.txtKitapAdi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtKitapAdi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtKitapAdi.Location = new System.Drawing.Point(122, 89);
+            this.txtKitapAdi.MaxLength = 40;
+            this.txtKitapAdi.Multiline = true;
+            this.txtKitapAdi.Name = "txtKitapAdi";
+            this.txtKitapAdi.Size = new System.Drawing.Size(144, 20);
+            this.txtKitapAdi.TabIndex = 35;
+            this.txtKitapAdi.TextChanged += new System.EventHandler(this.textChangedEvent);
             // 
-            // txtAd
+            // txtKitapBarkodNo
             // 
-            this.txtAd.BackColor = System.Drawing.Color.IndianRed;
-            this.txtAd.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtAd.Location = new System.Drawing.Point(123, 85);
-            this.txtAd.MaxLength = 45;
-            this.txtAd.Multiline = true;
-            this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(144, 20);
-            this.txtAd.TabIndex = 35;
-            this.txtAd.TextChanged += new System.EventHandler(this.textChangedEvent);
-            // 
-            // txtTcNo
-            // 
-            this.txtTcNo.BackColor = System.Drawing.Color.IndianRed;
-            this.txtTcNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTcNo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtTcNo.Location = new System.Drawing.Point(123, 59);
-            this.txtTcNo.MaxLength = 11;
-            this.txtTcNo.Multiline = true;
-            this.txtTcNo.Name = "txtTcNo";
-            this.txtTcNo.Size = new System.Drawing.Size(144, 20);
-            this.txtTcNo.TabIndex = 40;
-            this.txtTcNo.TextChanged += new System.EventHandler(this.textChangedEvent);
+            this.txtKitapBarkodNo.BackColor = System.Drawing.Color.IndianRed;
+            this.txtKitapBarkodNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtKitapBarkodNo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtKitapBarkodNo.Location = new System.Drawing.Point(122, 64);
+            this.txtKitapBarkodNo.MaxLength = 11;
+            this.txtKitapBarkodNo.Multiline = true;
+            this.txtKitapBarkodNo.Name = "txtKitapBarkodNo";
+            this.txtKitapBarkodNo.Size = new System.Drawing.Size(144, 20);
+            this.txtKitapBarkodNo.TabIndex = 40;
+            this.txtKitapBarkodNo.TextChanged += new System.EventHandler(this.textChangedEvent);
             // 
             // dataGridView1
             // 
@@ -356,6 +333,29 @@
             this.dataGridView1.TabIndex = 34;
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(37, 165);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Sayfa Sayısı:";
+            // 
+            // txtYayinEvi
+            // 
+            this.txtYayinEvi.BackColor = System.Drawing.Color.IndianRed;
+            this.txtYayinEvi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtYayinEvi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtYayinEvi.Location = new System.Drawing.Point(122, 139);
+            this.txtYayinEvi.MaxLength = 25;
+            this.txtYayinEvi.Multiline = true;
+            this.txtYayinEvi.Name = "txtYayinEvi";
+            this.txtYayinEvi.Size = new System.Drawing.Size(144, 20);
+            this.txtYayinEvi.TabIndex = 36;
+            this.txtYayinEvi.TextChanged += new System.EventHandler(this.textChangedEvent);
+            // 
             // KitapIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,34 +365,34 @@
             this.Controls.Add(this.btnYenile);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnGuncelle);
-            this.Controls.Add(this.txtAdres);
+            this.Controls.Add(this.txtAciklama);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEkle);
-            this.Controls.Add(this.txtTcNo);
-            this.Controls.Add(this.numYas);
-            this.Controls.Add(this.txtAd);
-            this.Controls.Add(this.numOkunanKitapSayisi);
-            this.Controls.Add(this.txtSoyad);
-            this.Controls.Add(this.cmbCinsiyet);
-            this.Controls.Add(this.txtTelefon);
+            this.Controls.Add(this.txtKitapBarkodNo);
+            this.Controls.Add(this.numSayfaSayisi);
+            this.Controls.Add(this.txtKitapAdi);
+            this.Controls.Add(this.numStokSayisi);
+            this.Controls.Add(this.txtYayinEvi);
+            this.Controls.Add(this.txtYazari);
+            this.Controls.Add(this.cmbTürü);
+            this.Controls.Add(this.txtRafNo);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.txtEposta);
-            this.Controls.Add(this.label17);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label12);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label13);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "KitapIslemleri";
             this.Text = "KitapIslemleri";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numYas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numOkunanKitapSayisi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSayfaSayisi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numStokSayisi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -408,11 +408,10 @@
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnEkle;
-        private System.Windows.Forms.NumericUpDown numYas;
-        private System.Windows.Forms.NumericUpDown numOkunanKitapSayisi;
-        private System.Windows.Forms.ComboBox cmbCinsiyet;
+        private System.Windows.Forms.NumericUpDown numSayfaSayisi;
+        private System.Windows.Forms.NumericUpDown numStokSayisi;
+        private System.Windows.Forms.ComboBox cmbTürü;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -420,12 +419,13 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtEposta;
-        private System.Windows.Forms.TextBox txtAdres;
-        private System.Windows.Forms.TextBox txtTelefon;
-        private System.Windows.Forms.TextBox txtSoyad;
-        private System.Windows.Forms.TextBox txtAd;
-        private System.Windows.Forms.TextBox txtTcNo;
+        private System.Windows.Forms.TextBox txtAciklama;
+        private System.Windows.Forms.TextBox txtRafNo;
+        private System.Windows.Forms.TextBox txtYazari;
+        private System.Windows.Forms.TextBox txtKitapAdi;
+        private System.Windows.Forms.TextBox txtKitapBarkodNo;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtYayinEvi;
     }
 }

@@ -40,15 +40,15 @@ namespace KutuphaneTakip.Formlar.Kitap
 
         private void textChangedEvent(object sender = null, EventArgs e = null)
         {
-            data["tcNo"] = txtTcNo.Text;
-            data["ad"] = txtAd.Text;
-            data["soyad"] = txtSoyad.Text;
-            data["yas"] = numYas.Value.ToString();
-            data["cinsiyet"] = cmbCinsiyet.Text;
-            data["telefon"] = txtTelefon.Text;
-            data["adres"] = txtAdres.Text;
+            data["tcNo"] = txtKitapBarkodNo.Text;
+            data["ad"] = txtKitapAdi.Text;
+            data["soyad"] = txtYazari.Text;
+            data["yas"] = numSayfaSayisi.Value.ToString();
+            data["cinsiyet"] = cmbTürü.Text;
+            data["telefon"] = txtRafNo.Text;
+            data["adres"] = txtAciklama.Text;
             data["eposta"] = txtEposta.Text;
-            data["okunanKitapSayisi"] = numOkunanKitapSayisi.Value.ToString();
+            data["okunanKitapSayisi"] = numStokSayisi.Value.ToString();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -120,14 +120,14 @@ namespace KutuphaneTakip.Formlar.Kitap
             var selected = dataGridView1.CurrentRow.Cells;
             try
             {
-                txtTcNo.Text = selected["tcNo"].Value.ToString();
-                txtSoyad.Text = selected["soyad"].Value.ToString();
-                numYas.Value = int.Parse(selected["yas"].Value.ToString());
-                cmbCinsiyet.Text = selected["cinsiyet"].Value.ToString();
-                txtTelefon.Text = selected["telefon"].Value.ToString();
-                txtAdres.Text = selected["adres"].Value.ToString();
+                txtKitapBarkodNo.Text = selected["tcNo"].Value.ToString();
+                txtYazari.Text = selected["soyad"].Value.ToString();
+                numSayfaSayisi.Value = int.Parse(selected["yas"].Value.ToString());
+                cmbTürü.Text = selected["cinsiyet"].Value.ToString();
+                txtRafNo.Text = selected["telefon"].Value.ToString();
+                txtAciklama.Text = selected["adres"].Value.ToString();
                 txtEposta.Text = selected["eposta"].Value.ToString();
-                numOkunanKitapSayisi.Value = int.Parse(selected["okunanKitapSayisi"].Value.ToString());
+                numStokSayisi.Value = int.Parse(selected["okunanKitapSayisi"].Value.ToString());
             }
             catch (Exception) { }
         }
