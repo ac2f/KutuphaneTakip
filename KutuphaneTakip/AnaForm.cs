@@ -44,7 +44,7 @@ namespace KutuphaneTakip
 
         private void btnEmanetKitap_Click(object sender, EventArgs e)
         {
-
+            new Formlar.EmanetKitap.EmanetKitap(accdb).ShowDialog();
         }
 
         private void btnSiralama_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace KutuphaneTakip
 
         private void btnKitap_Click(object sender, EventArgs e)
         {
-
+            new Formlar.Kitap.KitapIslemleri(accdb).ShowDialog();
         }
 
         private void btnUye_Click(object sender, EventArgs e)

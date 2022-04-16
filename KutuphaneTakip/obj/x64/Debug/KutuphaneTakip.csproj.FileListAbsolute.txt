@@ -10,3 +10,17 @@ D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\Kutuphane
 D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.exe
 D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.pdb
 D:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.AnaForm.resources
+F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.csproj.AssemblyReference.cache
+F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.csproj.SuggestedBindingRedirects.cache
+F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.AnaForm.resources
+F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.Formlar.EmanetKitap.EmanetKitap.resources
+F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.Formlar.Kitap.KitapIslemleri.resources
+F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.Formlar.Uye.UyeIslemleri.resources
+F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.Properties.Resources.resources
+F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.csproj.GenerateResource.cache
+F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.csproj.CoreCompileInputs.cache
+F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.exe
+F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\x64\Debug\KutuphaneTakip.pdb
+F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\bin\x64\Debug\KutuphaneTakip.exe.config
+F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\bin\x64\Debug\KutuphaneTakip.exe
+F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\bin\x64\Debug\KutuphaneTakip.pdb

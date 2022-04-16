@@ -73,6 +73,12 @@
     <Compile Include="AnaForm.Designer.cs">
       <DependentUpon>AnaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\EmanetKitap\EmanetKitapGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\EmanetKitap\EmanetKitapGoruntule.Designer.cs">
+      <DependentUpon>EmanetKitapGoruntule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\EmanetKitap\EmanetKitap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\EmanetKitap\EmanetKitapGoruntule.resx">
+      <DependentUpon>EmanetKitapGoruntule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\EmanetKitap\EmanetKitap.resx">
       <DependentUpon>EmanetKitap.cs</DependentUpon>

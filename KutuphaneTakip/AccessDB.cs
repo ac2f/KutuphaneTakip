@@ -11,7 +11,7 @@ namespace KutuphaneTakip
     {
         public Dictionary<string, string> tables = new Dictionary<string, string>() { };
         string dbFile;
-        OleDbConnection connection;
+        public OleDbConnection connection;
         public AccessDB(string dbFile)
         {
             this.dbFile = dbFile;
@@ -40,8 +40,33 @@ namespace KutuphaneTakip
             new OleDbDataAdapter("SELECT * FROM " + table + " " + condition, this.connection).Fill(dt);
             return dt;
         }
+        public DataTable GetRows(string tableKey, string condition, string innerJoinTableKey, string innerJoinOnColumn)
+        {
+            string tableMain = tables[tableKey];
+            string tableInnerJoiner = tables[innerJoinTableKey];
+            DataTable dt = new DataTable();
+            new OleDbDataAdapter("SELECT * FROM " + tableMain + " " + condition + " INNER JOIN " + tableInnerJoiner + "  ON "+tableInnerJoiner+"." + innerJoinOnColumn + "="+tableMain+"." + innerJoinOnColumn, this.connection).Fill(dt);
+            return dt;
+        }
+        public int SumColumn(string tableKey, string column, string condition = "")
+        {
+            string table = tables[tableKey];
+            DataTable dt = new DataTable();
+            new OleDbDataAdapter("SELECT SUM(" + column + ") as total FROM " + table + " " + condition, connection).Fill(dt);
+            //return dt.Rows[0].Field<int>("total");
+            return int.Parse(dt.Rows[0].Field<double>("total").ToString());
+        }
+        public int CountColumn(string tableKey, string column, string condition = "")
+        {
+            string table = tables[tableKey];
+            DataTable dt = new DataTable();
+            new OleDbDataAdapter("SELECT COUNT(" + column + ") as total FROM " + table + " " + condition, connection).Fill(dt);
+            //return dt.Rows[0].Field<int>("total");
+            return int.Parse(dt.Rows[0].Field<int>("total").ToString());
+        }
         public void ExecuteQuery(string query)
         {
+            System.Windows.Forms.MessageBox.Show(query);
             new OleDbCommand(query, connection).ExecuteNonQuery();
         }
         public string CreateExactCondition(Dictionary<string, string> data)
@@ -55,6 +80,11 @@ namespace KutuphaneTakip
             };
             sqlString = this.SubString(sqlString, 0, sqlString.Length - 5);
             return sqlString;
+        }
+        public void ClearTable(string tableKey)
+        {
+            string table = tables[tableKey];
+            new OleDbCommand("DELETE FROM " + table).ExecuteNonQuery();
         }
         public string CreateLikeCondition(string key, string value)
         {

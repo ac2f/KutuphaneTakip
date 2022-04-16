@@ -34,21 +34,22 @@ namespace KutuphaneTakip.Formlar.Kitap
         {
             InitializeComponent();
             this.accdb = accdb;
+            btnYenile_Click(null, null);
         }
         AccessDB accdb;
         Dictionary<string, string> data = new Dictionary<string, string>() { };
 
         private void textChangedEvent(object sender = null, EventArgs e = null)
         {
-            data["tcNo"] = txtKitapBarkodNo.Text;
-            data["ad"] = txtKitapAdi.Text;
-            data["soyad"] = txtYazari.Text;
-            data["yas"] = numSayfaSayisi.Value.ToString();
-            data["cinsiyet"] = cmbTürü.Text;
-            data["telefon"] = txtRafNo.Text;
-            data["adres"] = txtAciklama.Text;
-            data["eposta"] = txtEposta.Text;
-            data["okunanKitapSayisi"] = numStokSayisi.Value.ToString();
+            data["barkodNo"] = txtKitapBarkodNo.Text;
+            data["kitapAdi"] = txtKitapAdi.Text;
+            data["kitapYazari"] = txtYazari.Text;
+            data["kitapYayinEvi"] = txtYayinEvi.Text;
+            data["kitapSayfaSayisi"] = int.Parse(numSayfaSayisi.Value+"")+"";
+            data["kitapStokSayisi"] = int.Parse(numStokSayisi.Value+"")+"";
+            data["kitapTuru"] = cmbTürü.Text;
+            data["kitapRafNo"] = txtRafNo.Text;
+            data["kitapAciklama"] = txtAciklama.Text;
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -63,43 +64,52 @@ namespace KutuphaneTakip.Formlar.Kitap
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            try
+            if (data.ContainsKey("barkodNo"))
             {
-                accdb.ExecuteQuery(accdb.CreateInsertIntoQueryString("kitaplar", data));
-                btnYenile_Click(null, null);
-            }
-            catch (Exception err)
-            {
-                errNotify(err);
+                try
+                {
+                    accdb.ExecuteQuery(accdb.CreateInsertIntoQueryString("kitaplar", data));
+                    btnYenile_Click(null, null);
+                }
+                catch (Exception err)
+                {
+                    errNotify(err);
+                }
             }
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            string tcNo = data["tcNo"];
-            data.Remove("tcNo");
-            try
+            if (data.ContainsKey("barkodNo"))
             {
-                accdb.ExecuteQuery(accdb.CreateUpdateQueryString("kitaplar", data, accdb.CreateExactCondition(new Dictionary<string, string>() { { "tcNo", tcNo } })));
-                btnYenile_Click(null, null);
+                string barkodNo = data["barkodNo"];
+                data.Remove("barkodNo");
+                try
+                {
+                    accdb.ExecuteQuery(accdb.CreateUpdateQueryString("kitaplar", data, accdb.CreateExactCondition(new Dictionary<string, string>() { { "barkodNo", barkodNo } })));
+                    btnYenile_Click(null, null);
+                }
+                catch (Exception err)
+                {
+                    errNotify(err);
+                }
+                data["barkodNo"] = barkodNo;
             }
-            catch (Exception err)
-            {
-                errNotify(err);
-            }
-            data["tcNo"] = tcNo;
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            try
+            if (data.ContainsKey("barkodNo"))
             {
-                accdb.ExecuteQuery(accdb.CreateDeleteQueryString("kitaplar", accdb.CreateExactCondition(new Dictionary<string, string>() { { "tcNo", data["tcNo"] } })));
-                btnYenile_Click(null, null);
-            }
-            catch (Exception err)
-            {
-                errNotify(err);
+                try
+                {
+                    accdb.ExecuteQuery(accdb.CreateDeleteQueryString("kitaplar", accdb.CreateExactCondition(new Dictionary<string, string>() { { "barkodNo", data["barkodNo"] } })));
+                    btnYenile_Click(null, null);
+                }
+                catch (Exception err)
+                {
+                    errNotify(err);
+                }
             }
         }
 
@@ -120,14 +130,23 @@ namespace KutuphaneTakip.Formlar.Kitap
             var selected = dataGridView1.CurrentRow.Cells;
             try
             {
-                txtKitapBarkodNo.Text = selected["tcNo"].Value.ToString();
-                txtYazari.Text = selected["soyad"].Value.ToString();
-                numSayfaSayisi.Value = int.Parse(selected["yas"].Value.ToString());
-                cmbTürü.Text = selected["cinsiyet"].Value.ToString();
-                txtRafNo.Text = selected["telefon"].Value.ToString();
-                txtAciklama.Text = selected["adres"].Value.ToString();
-                txtEposta.Text = selected["eposta"].Value.ToString();
-                numStokSayisi.Value = int.Parse(selected["okunanKitapSayisi"].Value.ToString());
+                txtKitapBarkodNo.Text = selected["barkodNo"].Value.ToString();
+                txtKitapAdi.Text = selected["kitapAdi"].Value.ToString();
+                txtYazari.Text = selected["kitapYazari"].Value.ToString();
+                txtYayinEvi.Text = selected["kitapYayinEvi"].Value.ToString();
+                numSayfaSayisi.Value = decimal.Parse(selected["kitapSayfaSayisi"].Value+"");
+                numStokSayisi.Value = decimal.Parse(selected["kitapStokSayisi"].Value+"");
+                cmbTürü.Text = selected["kitapTuru"].Value.ToString();
+                txtRafNo.Text = selected["kitapRafNo"].Value.ToString();
+                txtAciklama.Text = selected["kitapAciklama"].Value.ToString();
+                //    txtKitapBarkodNo.Text = selected["barkodNo"].Value.ToString();
+                //    txtYazari.Text = selected["soyad"].Value.ToString();
+                //    numSayfaSayisi.Value = int.Parse(selected["yas"].Value.ToString());
+                //    cmbTürü.Text = selected["cinsiyet"].Value.ToString();
+                //    txtRafNo.Text = selected["telefon"].Value.ToString();
+                //    txtAciklama.Text = selected["adres"].Value.ToString();
+                //    //txtEposta.Text = selected["eposta"].Value.ToString();
+                //    numStokSayisi.Value = int.Parse(selected["okunanKitapSayisi"].Value.ToString());
             }
             catch (Exception) { }
         }

@@ -64,43 +64,52 @@ namespace KutuphaneTakip.Formlar.Uye
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            try
+            if (data.ContainsKey("tcNo"))
             {
-                accdb.ExecuteQuery(accdb.CreateInsertIntoQueryString("uyeler", data));
-                btnYenile_Click(null, null);
-            }
-            catch (Exception err)
-            {
-                errNotify(err);
+                try
+                    {
+                    accdb.ExecuteQuery(accdb.CreateInsertIntoQueryString("uyeler", data));
+                    btnYenile_Click(null, null);
+                }
+                catch (Exception err)
+                {
+                    errNotify(err);
+                }
             }
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            string tcNo = data["tcNo"];
-            data.Remove("tcNo");
-            try
+            if (data.ContainsKey("tcNo"))
             {
-                accdb.ExecuteQuery(accdb.CreateUpdateQueryString("uyeler", data, accdb.CreateExactCondition(new Dictionary<string, string>() { { "tcNo", tcNo} })));
-                btnYenile_Click(null, null);
+                string tcNo = data["tcNo"];
+                data.Remove("tcNo");
+                try
+                {
+                    accdb.ExecuteQuery(accdb.CreateUpdateQueryString("uyeler", data, accdb.CreateExactCondition(new Dictionary<string, string>() { { "tcNo", tcNo} })));
+                    btnYenile_Click(null, null);
+                }
+                catch (Exception err)
+                {
+                    errNotify(err);
+                }
+                data["tcNo"] = tcNo;
             }
-            catch (Exception err)
-            {
-                errNotify(err);
-            }
-            data["tcNo"] = tcNo;
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            try
+            if (data.ContainsKey("tcNo"))
             {
-                accdb.ExecuteQuery(accdb.CreateDeleteQueryString("uyeler", accdb.CreateExactCondition(new Dictionary<string, string>() { { "tcNo", data["tcNo"]} })));
-                btnYenile_Click(null, null);
-            }
-            catch (Exception err)
-            {
-                errNotify(err);
+                try
+                {
+                    accdb.ExecuteQuery(accdb.CreateDeleteQueryString("uyeler", accdb.CreateExactCondition(new Dictionary<string, string>() { { "tcNo", data["tcNo"]} })));
+                    btnYenile_Click(null, null);
+                }
+                catch (Exception err)
+                {
+                    errNotify(err);
+                }
             }
         }
 
