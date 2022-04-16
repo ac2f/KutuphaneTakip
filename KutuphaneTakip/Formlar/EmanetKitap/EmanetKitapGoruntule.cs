@@ -76,12 +76,9 @@ namespace KutuphaneTakip.Formlar.EmanetKitapGoruntule
 
         private void btnYenile_Click(object sender, EventArgs e)
         {
-            //DataTable dt = new DataTable();
-            //new OleDbDataAdapter("SELECT M", accdb.connection).Fill(dt);
-            //dataGridView1.DataSource = dt; ;
-            //lblKitapSayisi.Text = accdb.CountColumn("emanet-kitaplar", "*") + "";
-
-            //dataGridView1.DataSource = accdb.GetRows("sepet", "", "kitaplar", "barkodNo");
+            DataTable dt = new DataTable();
+            new OleDbDataAdapter("SELECT * FROM (EmanetKitaplar AS EK INNER JOIN Kitaplar AS K ON K.barkodNo=EK.barkodNo) INNER JOIN Uyeler AS U ON U.tcNo=EK.tcNo", accdb.connection).Fill(dt);
+            dataGridView1.DataSource = dt;
         }
 
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -109,21 +106,26 @@ namespace KutuphaneTakip.Formlar.EmanetKitapGoruntule
             }
             catch (Exception err)
             {
-                MessageBox.Show("Hata! "+err.Message);
-
+                MessageBox.Show("Hata! " + err.Message);
             }
         }
 
         private void txtAra_TextChanged(object sender, EventArgs e)
         {
+            if (txtAra.Text == "")
+            {
+                btnYenile_Click(null, null);
+                return;
+            }
             try
             {
-                //new OleDbDataAdapter()
-                dataGridView1.DataSource = accdb.GetRows("emanet-kitaplar", accdb.CreateLikeCondition(new string[] { "tcNo", "barkodNo", "kitapSayisi", "teslimTarihi", "iadeTarihi"  }, txtAra.Text));
+                DataTable dt = new DataTable();
+                new OleDbDataAdapter("SELECT * FROM (EmanetKitaplar AS EK INNER JOIN Kitaplar AS K ON K.barkodNo=EK.barkodNo) INNER JOIN Uyeler AS U ON U.tcNo=EK.tcNo " + accdb.CreateLikeCondition(new string[] { "EK.tcNo", "EK.barkodNo", "EK.kitapSayisi", "EK.teslimTarihi", "EK.iadeTarihi" }, txtAra.Text), accdb.connection).Fill(dt);
+                dataGridView1.DataSource = dt;
             }
-            catch (Exception)
+            catch (Exception err)
             {
-
+                MessageBox.Show(err.Message);
             }
         }
     }

@@ -215,7 +215,7 @@ namespace KutuphaneTakip.Formlar.EmanetKitap
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            new Formlar.EmanetKitapGoruntule.EmanetKitapGoruntule(accdb).ShowDialog();
         }
     }
 }

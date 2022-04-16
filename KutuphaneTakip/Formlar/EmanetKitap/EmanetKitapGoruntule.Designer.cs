@@ -42,6 +42,7 @@
             this.cmbKitapSayisi = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtAra = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -70,13 +71,13 @@
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.IndianRed;
+            this.button9.BackColor = System.Drawing.SystemColors.Control;
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(773, 2);
+            this.button9.ForeColor = System.Drawing.Color.IndianRed;
+            this.button9.Location = new System.Drawing.Point(772, 0);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(22, 22);
+            this.button9.Size = new System.Drawing.Size(29, 29);
             this.button9.TabIndex = 1;
             this.button9.Text = "X";
             this.button9.UseVisualStyleBackColor = false;
@@ -200,12 +201,26 @@
             this.txtAra.TabIndex = 85;
             this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.IndianRed;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBox1.Location = new System.Drawing.Point(83, 119);
+            this.textBox1.MaxLength = 50;
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(146, 20);
+            this.textBox1.TabIndex = 85;
+            this.textBox1.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
+            // 
             // EmanetKitapGoruntule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(800, 402);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbKitapSayisi);
@@ -245,5 +260,6 @@
         private System.Windows.Forms.ComboBox cmbKitapSayisi;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAra;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

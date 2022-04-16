@@ -19,7 +19,7 @@ namespace KutuphaneTakip
             AccessDB accdb = new AccessDB("db.accdb");
             accdb.AddNewTable("uyeler", "Uyeler");
             accdb.AddNewTable("kitaplar", "Kitaplar");
-            accdb.AddNewTable("emanet-kitaplar", "Kitaplar");
+            accdb.AddNewTable("emanet-kitaplar", "EmanetKitaplar");
             accdb.AddNewTable("sepet", "Sepet");
             Application.Run(new AnaForm(accdb));
         }

@@ -72,13 +72,13 @@
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.IndianRed;
+            this.button9.BackColor = System.Drawing.SystemColors.Control;
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(773, 3);
+            this.button9.ForeColor = System.Drawing.Color.IndianRed;
+            this.button9.Location = new System.Drawing.Point(772, 0);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(22, 22);
+            this.button9.Size = new System.Drawing.Size(29, 29);
             this.button9.TabIndex = 1;
             this.button9.Text = "X";
             this.button9.UseVisualStyleBackColor = false;

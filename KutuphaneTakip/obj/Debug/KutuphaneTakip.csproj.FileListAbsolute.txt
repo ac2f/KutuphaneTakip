@@ -23,3 +23,4 @@ F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\Kutuphane
 F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\Debug\KutuphaneTakip.csproj.CoreCompileInputs.cache
 F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\Debug\KutuphaneTakip.exe
 F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\Debug\KutuphaneTakip.pdb
+F:\WindowsDirectories\Backup\a1_0\Documents\code\csharp\KutuphaneTakip\KutuphaneTakip\obj\Debug\KutuphaneTakip.Formlar.EmanetKitapGoruntule.EmanetKitapGoruntule.resources
