@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-namespace KutuphaneTakip
+using System.Data.OleDb;
+namespace KutuphaneTakip.Formlar.Siralama
 {
-    public partial class AnaForm : Form
+    public partial class UyeSiralama : Form
     {
         private const int WM_NCHITTEST = 0x84;
         private const int HTCLIENT = 0x1;
@@ -31,40 +31,27 @@ namespace KutuphaneTakip
             base.WndProc(ref m);
         }
         AccessDB accdb;
-        public AnaForm(AccessDB accdb)
+        public UyeSiralama(AccessDB accdb)
         {
-            InitializeComponent();
             this.accdb = accdb;
+            InitializeComponent();
+            btnYenile_Click(null, null);
         }
 
+        private void SayacGuncelle()
+        {
+            lblKitapSayisi.Text = (dataGridView1.Rows.Count - 1) + "";
+        }
         private void button9_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
-        private void btnEmanetKitap_Click(object sender, EventArgs e)
+        private void btnYenile_Click(object sender, EventArgs e)
         {
-            new Formlar.EmanetKitap.EmanetKitap(accdb).ShowDialog();
+            dataGridView1.DataSource = accdb.GetRows("uyeler", accdb.CreateOrderByQuery("okunanKitapSayisi", true));
+            SayacGuncelle();
         }
 
-        private void btnSiralama_Click(object sender, EventArgs e)
-        {
-            new Formlar.Siralama.UyeSiralama(accdb).ShowDialog();
-        }
-
-        private void btnGrafikler_Click(object sender, EventArgs e)
-        {
-            new Formlar.Siralama.KitapSiralama(accdb).ShowDialog();
-        }
-
-        private void btnKitap_Click(object sender, EventArgs e)
-        {
-            new Formlar.Kitap.KitapIslemleri(accdb).ShowDialog();
-        }
-
-        private void btnUye_Click(object sender, EventArgs e)
-        {
-            new Formlar.Uye.UyeIslemleri(accdb).ShowDialog();
-        }
     }
 }

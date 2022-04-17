@@ -82,7 +82,7 @@
             // 
             this.btnYenile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYenile.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnYenile.Location = new System.Drawing.Point(540, 348);
+            this.btnYenile.Location = new System.Drawing.Point(539, 347);
             this.btnYenile.Name = "btnYenile";
             this.btnYenile.Size = new System.Drawing.Size(249, 40);
             this.btnYenile.TabIndex = 80;
@@ -92,7 +92,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(0, -1);
@@ -102,7 +102,7 @@
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.SystemColors.Control;
+            this.button9.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.ForeColor = System.Drawing.Color.IndianRed;
@@ -119,9 +119,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(11, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 13);
+            this.label5.Size = new System.Drawing.Size(191, 13);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Emanet Kitap İşlemleri";
+            this.label5.Text = "Emanet Kitap - Sepete Ekleme İşlemleri";
             // 
             // btnGuncelle
             // 
@@ -138,9 +138,9 @@
             // 
             this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSil.ForeColor = System.Drawing.Color.Red;
-            this.btnSil.Location = new System.Drawing.Point(285, 348);
+            this.btnSil.Location = new System.Drawing.Point(283, 347);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(120, 40);
+            this.btnSil.Size = new System.Drawing.Size(123, 40);
             this.btnSil.TabIndex = 78;
             this.btnSil.Text = "Sepetten Sil";
             this.btnSil.UseVisualStyleBackColor = true;
@@ -161,7 +161,7 @@
             this.btnEkle.ForeColor = System.Drawing.Color.LawnGreen;
             this.btnEkle.Location = new System.Drawing.Point(285, 302);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(120, 40);
+            this.btnEkle.Size = new System.Drawing.Size(123, 40);
             this.btnEkle.TabIndex = 77;
             this.btnEkle.Text = "Sepete Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
@@ -276,7 +276,7 @@
             this.cmbTelefon.Size = new System.Drawing.Size(144, 21);
             this.cmbTelefon.TabIndex = 72;
             this.cmbTelefon.Tag = "telefon";
-            this.cmbTelefon.SelectedIndexChanged += new System.EventHandler(this.cmbTcNo_SelectedIndexChanged);
+            this.cmbTelefon.SelectedIndexChanged += new System.EventHandler(this.panelUye_SelectedIndexChanged);
             // 
             // cmbSoyad
             // 
@@ -289,7 +289,7 @@
             this.cmbSoyad.Size = new System.Drawing.Size(144, 21);
             this.cmbSoyad.TabIndex = 72;
             this.cmbSoyad.Tag = "soyad";
-            this.cmbSoyad.SelectedIndexChanged += new System.EventHandler(this.cmbTcNo_SelectedIndexChanged);
+            this.cmbSoyad.SelectedIndexChanged += new System.EventHandler(this.panelUye_SelectedIndexChanged);
             // 
             // cmbAd
             // 
@@ -302,7 +302,7 @@
             this.cmbAd.Size = new System.Drawing.Size(144, 21);
             this.cmbAd.TabIndex = 72;
             this.cmbAd.Tag = "ad";
-            this.cmbAd.SelectedIndexChanged += new System.EventHandler(this.cmbTcNo_SelectedIndexChanged);
+            this.cmbAd.SelectedIndexChanged += new System.EventHandler(this.panelUye_SelectedIndexChanged);
             // 
             // cmbTcNo
             // 
@@ -315,7 +315,7 @@
             this.cmbTcNo.Size = new System.Drawing.Size(144, 21);
             this.cmbTcNo.TabIndex = 72;
             this.cmbTcNo.Tag = "tcNo";
-            this.cmbTcNo.SelectedIndexChanged += new System.EventHandler(this.cmbTcNo_SelectedIndexChanged);
+            this.cmbTcNo.SelectedIndexChanged += new System.EventHandler(this.panelUye_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -354,7 +354,7 @@
             this.cmbYayinEvi.Size = new System.Drawing.Size(144, 21);
             this.cmbYayinEvi.TabIndex = 72;
             this.cmbYayinEvi.Tag = "kitapYayinEvi";
-            this.cmbYayinEvi.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbYayinEvi.SelectedIndexChanged += new System.EventHandler(this.panelKitap_SelectedIndexChanged);
             // 
             // cmbKitapYazari
             // 
@@ -367,7 +367,7 @@
             this.cmbKitapYazari.Size = new System.Drawing.Size(144, 21);
             this.cmbKitapYazari.TabIndex = 72;
             this.cmbKitapYazari.Tag = "kitapYazari";
-            this.cmbKitapYazari.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbKitapYazari.SelectedIndexChanged += new System.EventHandler(this.panelKitap_SelectedIndexChanged);
             // 
             // cmbKitapAdi
             // 
@@ -380,7 +380,7 @@
             this.cmbKitapAdi.Size = new System.Drawing.Size(144, 21);
             this.cmbKitapAdi.TabIndex = 72;
             this.cmbKitapAdi.Tag = "kitapAdi";
-            this.cmbKitapAdi.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbKitapAdi.SelectedIndexChanged += new System.EventHandler(this.panelKitap_SelectedIndexChanged);
             // 
             // cmbBarkodNo
             // 
@@ -393,7 +393,7 @@
             this.cmbBarkodNo.Size = new System.Drawing.Size(144, 21);
             this.cmbBarkodNo.TabIndex = 72;
             this.cmbBarkodNo.Tag = "barkodNo";
-            this.cmbBarkodNo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbBarkodNo.SelectedIndexChanged += new System.EventHandler(this.panelKitap_SelectedIndexChanged);
             // 
             // dtpIadeTarihi
             // 
@@ -402,6 +402,7 @@
             this.dtpIadeTarihi.Name = "dtpIadeTarihi";
             this.dtpIadeTarihi.Size = new System.Drawing.Size(146, 20);
             this.dtpIadeTarihi.TabIndex = 98;
+            this.dtpIadeTarihi.ValueChanged += new System.EventHandler(this.panelKitap_SelectedIndexChanged);
             // 
             // dtpTeslimTarihi
             // 
@@ -411,6 +412,7 @@
             this.dtpTeslimTarihi.Name = "dtpTeslimTarihi";
             this.dtpTeslimTarihi.Size = new System.Drawing.Size(146, 20);
             this.dtpTeslimTarihi.TabIndex = 98;
+            this.dtpTeslimTarihi.ValueChanged += new System.EventHandler(this.panelKitap_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -436,6 +438,7 @@
             this.numSayfaSayisi.Name = "numSayfaSayisi";
             this.numSayfaSayisi.Size = new System.Drawing.Size(146, 20);
             this.numSayfaSayisi.TabIndex = 97;
+            this.numSayfaSayisi.Click += new System.EventHandler(this.panelKitap_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -466,6 +469,7 @@
             this.numKitapSayisi.Name = "numKitapSayisi";
             this.numKitapSayisi.Size = new System.Drawing.Size(146, 20);
             this.numKitapSayisi.TabIndex = 96;
+            this.numKitapSayisi.Click += new System.EventHandler(this.panelKitap_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -529,7 +533,7 @@
             this.cmbKitapSayisi.TabStop = false;
             this.cmbKitapSayisi.Tag = "kitapStokSayisi";
             this.cmbKitapSayisi.Visible = false;
-            this.cmbKitapSayisi.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbKitapSayisi.SelectedIndexChanged += new System.EventHandler(this.panelKitap_SelectedIndexChanged);
             // 
             // cmbSayfaSayisi
             // 
@@ -543,15 +547,15 @@
             this.cmbSayfaSayisi.TabStop = false;
             this.cmbSayfaSayisi.Tag = "kitapSayfaSayisi";
             this.cmbSayfaSayisi.Visible = false;
-            this.cmbSayfaSayisi.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbSayfaSayisi.SelectedIndexChanged += new System.EventHandler(this.panelKitap_SelectedIndexChanged);
             // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.LawnGreen;
-            this.button1.Location = new System.Drawing.Point(414, 302);
+            this.button1.Location = new System.Drawing.Point(412, 302);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 40);
+            this.button1.Size = new System.Drawing.Size(123, 40);
             this.button1.TabIndex = 77;
             this.button1.Text = "Sepeti E.K\'ya Aktar";
             this.button1.UseVisualStyleBackColor = true;
@@ -561,9 +565,9 @@
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.DarkOrange;
-            this.button2.Location = new System.Drawing.Point(414, 347);
+            this.button2.Location = new System.Drawing.Point(412, 347);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 40);
+            this.button2.Size = new System.Drawing.Size(123, 40);
             this.button2.TabIndex = 78;
             this.button2.Text = "E.K Görüntüle";
             this.button2.UseVisualStyleBackColor = true;

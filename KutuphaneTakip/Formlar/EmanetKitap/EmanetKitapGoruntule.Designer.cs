@@ -42,7 +42,6 @@
             this.cmbKitapSayisi = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtAra = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +60,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(0, -1);
@@ -71,7 +70,7 @@
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.SystemColors.Control;
+            this.button9.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.ForeColor = System.Drawing.Color.IndianRed;
@@ -88,9 +87,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(11, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 13);
+            this.label5.Size = new System.Drawing.Size(173, 13);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Emanet Kitap İşlemleri";
+            this.label5.Text = "Emanet Kitap Görüntüleme İşlemleri";
             // 
             // btnSil
             // 
@@ -123,6 +122,7 @@
             this.btnEkle.TabIndex = 77;
             this.btnEkle.Text = "E.K İade Et";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // label1
             // 
@@ -201,26 +201,12 @@
             this.txtAra.TabIndex = 85;
             this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.IndianRed;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Location = new System.Drawing.Point(83, 119);
-            this.textBox1.MaxLength = 50;
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 20);
-            this.textBox1.TabIndex = 85;
-            this.textBox1.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
-            // 
             // EmanetKitapGoruntule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(800, 402);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbKitapSayisi);
@@ -260,6 +246,5 @@
         private System.Windows.Forms.ComboBox cmbKitapSayisi;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAra;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

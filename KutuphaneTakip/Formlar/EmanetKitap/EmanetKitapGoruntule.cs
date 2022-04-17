@@ -30,7 +30,6 @@ namespace KutuphaneTakip.Formlar.EmanetKitapGoruntule
             }
             base.WndProc(ref m);
         }
-        private Dictionary<string, ComboBox[]> comboBoxArrayMap;
         Dictionary<string, string> data = new Dictionary<string, string>() { };
         AccessDB accdb;
         public EmanetKitapGoruntule(AccessDB accdb)
@@ -41,19 +40,8 @@ namespace KutuphaneTakip.Formlar.EmanetKitapGoruntule
             lblKayitliKitapSayisi.Text = accdb.SumColumn("kitaplar", "kitapStokSayisi") + "";
             lblKitapSayisi.Text = accdb.CountColumn("sepet", "*") + "";
         }
-
-        private void changeIndexOfCBArray(object sender, ComboBox[] comboBoxArray)
-        {
-            int selectedIndex = ((ComboBox)sender).SelectedIndex;
-            foreach (var comboBox in comboBoxArray)
-            {
-                comboBox.SelectedIndex = selectedIndex;
-            }
-        }
-
         private void cmbTcNo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            changeIndexOfCBArray(sender, comboBoxArrayMap["uye"]);
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -65,7 +53,6 @@ namespace KutuphaneTakip.Formlar.EmanetKitapGoruntule
         {
             try
             {
-                changeIndexOfCBArray(sender, comboBoxArrayMap["kitap"]);
                 int selectedIndex = ((ComboBox)sender).SelectedIndex;
             }
             catch (Exception)
@@ -87,9 +74,11 @@ namespace KutuphaneTakip.Formlar.EmanetKitapGoruntule
             {
                 var selected = dataGridView1.CurrentRow.Cells;
                 data["barkodNo"] = selected[1].Value.ToString();
+                data["tcNo"] = selected[0].Value.ToString();
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                MessageBox.Show("Hata! " + err.Message);
             }
         }
 
@@ -99,8 +88,12 @@ namespace KutuphaneTakip.Formlar.EmanetKitapGoruntule
             {
                 if (data.ContainsKey("barkodNo"))
                 {
-                    accdb.ExecuteQuery(accdb.CreateDeleteQueryString("emanet-kitaplar", accdb.CreateExactCondition(new Dictionary<string, string>() {
-                        { "barkodNo", data["barkodNo"] } })));
+                    accdb.ExecuteQuery(accdb.CreateDeleteQueryString(
+                        "emanet-kitaplar",
+                        accdb.CreateExactCondition(new Dictionary<string, string>() {
+                            { "barkodNo", data["barkodNo"] }
+                        })
+                    ));
                     btnYenile_Click(null, null);
                 }
             }
@@ -126,6 +119,34 @@ namespace KutuphaneTakip.Formlar.EmanetKitapGoruntule
             catch (Exception err)
             {
                 MessageBox.Show(err.Message);
+            }
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (data.ContainsKey("tcNo"))
+                {
+                    accdb.ExecuteQuery(
+                        accdb.CreateUpdateQueryString(
+                            "emanet-kitaplar",
+                            new Dictionary<string, string>() {
+                                { "iadeTarihi", DateTime.Now.ToShortDateString() }
+                            },
+                            accdb.CreateExactCondition(new Dictionary<string, string>() {
+                                { "tcNo", data["tcNo"]},
+                                {"barkodNo", data["barkodNo"]}
+                            })
+                   ));
+                    accdb.CreateIncreaseColumnValue("uyeler", "okunanKitapSayisi", 1);
+                    MessageBox.Show("Kitap iade edildi ve üyenin bilgileri +1 kitap okudu olarak güncellendi!");
+                    btnYenile_Click(null, null);
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Hata! " + err.Message);
             }
         }
     }

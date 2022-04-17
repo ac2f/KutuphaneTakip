@@ -91,6 +91,18 @@
     <Compile Include="Formlar\Kitap\KitapIslemleri.Designer.cs">
       <DependentUpon>KitapIslemleri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\Siralama\UyeSiralama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Siralama\UyeSiralama.Designer.cs">
+      <DependentUpon>UyeSiralama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Siralama\KitapSiralama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Siralama\KitapSiralama.Designer.cs">
+      <DependentUpon>KitapSiralama.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\Uye\UyeIslemleri.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Kitap\KitapIslemleri.resx">
       <DependentUpon>KitapIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Siralama\UyeSiralama.resx">
+      <DependentUpon>UyeSiralama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Siralama\KitapSiralama.resx">
+      <DependentUpon>KitapSiralama.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Uye\UyeIslemleri.resx">
       <DependentUpon>UyeIslemleri.cs</DependentUpon>

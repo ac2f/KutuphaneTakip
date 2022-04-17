@@ -45,7 +45,7 @@ namespace KutuphaneTakip
             string tableMain = tables[tableKey];
             string tableInnerJoiner = tables[innerJoinTableKey];
             DataTable dt = new DataTable();
-            new OleDbDataAdapter("SELECT * FROM " + tableMain + " " + condition + " INNER JOIN " + tableInnerJoiner + "  ON "+tableInnerJoiner+"." + innerJoinOnColumn + "="+tableMain+"." + innerJoinOnColumn, this.connection).Fill(dt);
+            new OleDbDataAdapter("SELECT * FROM " + tableMain + " " + condition + " INNER JOIN " + tableInnerJoiner + "  ON " + tableInnerJoiner + "." + innerJoinOnColumn + "=" + tableMain + "." + innerJoinOnColumn, this.connection).Fill(dt);
             return dt;
         }
         public int SumColumn(string tableKey, string column, string condition = "")
@@ -61,13 +61,27 @@ namespace KutuphaneTakip
             string table = tables[tableKey];
             DataTable dt = new DataTable();
             new OleDbDataAdapter("SELECT COUNT(" + column + ") as total FROM " + table + " " + condition, connection).Fill(dt);
-            //return dt.Rows[0].Field<int>("total");
             return int.Parse(dt.Rows[0].Field<int>("total").ToString());
         }
+        public void CreateIncreaseColumnValue(string tableKey, string column, int value)
+        {
+            string table = tables[tableKey];
+            new OleDbCommand("UPDATE " + table + " SET " + column + "=" + column + "+" + value, connection).ExecuteNonQuery();
+        }
+
         public void ExecuteQuery(string query)
         {
-            System.Windows.Forms.MessageBox.Show(query);
             new OleDbCommand(query, connection).ExecuteNonQuery();
+        }
+        public string CreateOrderByQuery(string column, bool mostFirst = false)
+        {
+            string sqlString = " ORDER BY " + column + " " + (!mostFirst ? "ASC" : "DESC");
+            return sqlString;
+        }
+        public string CreateDatediffFromNowCondition(string column, string format, int value, bool getBiggerThan = false)
+        {
+            string sqlString = " WHERE DATEDIFF('" + format + "', " + column + ", Date()) " + (!getBiggerThan ? "< " : "> ") + value;
+            return sqlString;
         }
         public string CreateExactCondition(Dictionary<string, string> data)
         {
@@ -84,13 +98,13 @@ namespace KutuphaneTakip
         public void ClearTable(string tableKey)
         {
             string table = tables[tableKey];
-            new OleDbCommand("DELETE FROM " + table).ExecuteNonQuery();
+            new OleDbCommand("DELETE FROM " + table, connection).ExecuteNonQuery();
         }
         public string CreateLikeCondition(string key, string value)
         {
-            string sqlString = " WHERE " + key + " LIKE '*"+ value + "*'";
+            string sqlString = " WHERE " + key + " LIKE '*" + value + "*'";
             return sqlString;
-        } 
+        }
         public string CreateLikeCondition(string[] keys, string value)
         {
             string sqlString = " WHERE ";
@@ -108,7 +122,8 @@ namespace KutuphaneTakip
         }
         public string CreateUpdateQueryString(string tableKey, Dictionary<string, string> data, string condition = "")
         {
-            string sqlString = "UPDATE " + tableKey + " SET ";
+            string table = tables[tableKey];
+            string sqlString = "UPDATE " + table + " SET ";
             foreach (var item in data)
             {
                 sqlString += (item.Key + "='" + item.Value + "', ");

@@ -139,14 +139,6 @@ namespace KutuphaneTakip.Formlar.Kitap
                 cmbTürü.Text = selected["kitapTuru"].Value.ToString();
                 txtRafNo.Text = selected["kitapRafNo"].Value.ToString();
                 txtAciklama.Text = selected["kitapAciklama"].Value.ToString();
-                //    txtKitapBarkodNo.Text = selected["barkodNo"].Value.ToString();
-                //    txtYazari.Text = selected["soyad"].Value.ToString();
-                //    numSayfaSayisi.Value = int.Parse(selected["yas"].Value.ToString());
-                //    cmbTürü.Text = selected["cinsiyet"].Value.ToString();
-                //    txtRafNo.Text = selected["telefon"].Value.ToString();
-                //    txtAciklama.Text = selected["adres"].Value.ToString();
-                //    //txtEposta.Text = selected["eposta"].Value.ToString();
-                //    numStokSayisi.Value = int.Parse(selected["okunanKitapSayisi"].Value.ToString());
             }
             catch (Exception) { }
         }

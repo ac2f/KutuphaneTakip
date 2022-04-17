@@ -32,6 +32,7 @@ namespace KutuphaneTakip.Formlar.EmanetKitap
         }
         private Dictionary<string, ComboBox[]> comboBoxArrayMap;
         Dictionary<string, string> data = new Dictionary<string, string>() { };
+        Dictionary<string, string> dataSepet = new Dictionary<string, string>() { };
         AccessDB accdb;
         public EmanetKitap(AccessDB accdb)
         {
@@ -43,7 +44,7 @@ namespace KutuphaneTakip.Formlar.EmanetKitap
                 {"kitap", accdb.GetRows("kitaplar") }
             };
             comboBoxArrayMap = new Dictionary<string, ComboBox[]>(){
-                { "uye", new ComboBox[] { cmbAd, cmbSoyad, cmbTcNo, cmbTelefon } }, 
+                { "uye", new ComboBox[] { cmbAd, cmbSoyad, cmbTcNo, cmbTelefon } },
                 { "kitap", new ComboBox[] { cmbBarkodNo, cmbKitapAdi, cmbKitapYazari, cmbYayinEvi, cmbSayfaSayisi, cmbKitapSayisi } } };
             foreach (var item in tables)
             {
@@ -55,7 +56,7 @@ namespace KutuphaneTakip.Formlar.EmanetKitap
                     }
                     catch (Exception)
                     {
-                        comboBox.Items.AddRange(tables[item.Key].AsEnumerable().Select(x => x.Field<int>(comboBox.Tag.ToString()).ToString() ).ToArray());
+                        comboBox.Items.AddRange(tables[item.Key].AsEnumerable().Select(x => x.Field<int>(comboBox.Tag.ToString()).ToString()).ToArray());
                     }
                 }
             }
@@ -75,28 +76,30 @@ namespace KutuphaneTakip.Formlar.EmanetKitap
             }
         }
 
-        private void cmbTcNo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            changeIndexOfCBArray(sender, comboBoxArrayMap["uye"]);
-        }
-
         private void button9_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void panelUye_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            data["tcNo"] = cmbTcNo.Text;
+            changeIndexOfCBArray(sender, comboBoxArrayMap["uye"]);
+        }
+        private void panelKitap_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
                 changeIndexOfCBArray(sender, comboBoxArrayMap["kitap"]);
                 int selectedIndex = ((ComboBox)sender).SelectedIndex;
-                numKitapSayisi.Value = decimal.Parse(cmbKitapSayisi.Items[selectedIndex]+""); 
-                numSayfaSayisi.Value = decimal.Parse(cmbSayfaSayisi.Items[selectedIndex]+"");
+                numKitapSayisi.Value = decimal.Parse(cmbKitapSayisi.Items[selectedIndex] + "");
+                numSayfaSayisi.Value = decimal.Parse(cmbSayfaSayisi.Items[selectedIndex] + "");
                 data["barkodNo"] = cmbBarkodNo.Text;
-                data["tcNo"] = cmbTcNo.Text;
+                dataSepet["barkodNo"] = data["barkodNo"];
+                data["kitapSayisi"] = cmbKitapSayisi.Text;
                 data["teslimTarihi"] = dtpTeslimTarihi.Value.ToShortDateString();
+                dataSepet["teslimTarihi"] = data["teslimTarihi"];
                 data["iadeTarihi"] = dtpIadeTarihi.Value.ToShortDateString();
+                dataSepet["iadeTarihi"] = data["iadeTarihi"];
             }
             catch (Exception)
             {
@@ -106,9 +109,6 @@ namespace KutuphaneTakip.Formlar.EmanetKitap
 
         private void btnYenile_Click(object sender, EventArgs e)
         {
-            //DataTable dt = new DataTable();
-            //new OleDbDataAdapter("SELECT M", accdb.connection).Fill(dt);
-            //dataGridView1.DataSource = dt; ;
             lblKitapSayisi.Text = accdb.CountColumn("sepet", "*") + "";
             dataGridView1.DataSource = accdb.GetRows("sepet", "", "kitaplar", "barkodNo");
         }
@@ -118,24 +118,7 @@ namespace KutuphaneTakip.Formlar.EmanetKitap
             var selected = dataGridView1.CurrentRow.Cells;
             try
             {
-                //cmbTcNo.SelectedIndex = cmbTcNo.Items.IndexOf(selected["tcNo"].Value.ToString());
                 cmbBarkodNo.SelectedIndex = cmbBarkodNo.Items.IndexOf(selected["Sepet.barkodNo"].Value.ToString());
-                //txtKitapAdi.Text = selected["kitapAdi"].Value.ToString();
-                //txtYazari.Text = selected["kitapYazari"].Value.ToString();
-                //txtYayinEvi.Text = selected["kitapYayinEvi"].Value.ToString();
-                //numSayfaSayisi.Value = decimal.Parse(selected["kitapSayfaSayisi"].Value + "");
-                //numStokSayisi.Value = decimal.Parse(selected["kitapStokSayisi"].Value + "");
-                //cmbTürü.Text = selected["kitapTuru"].Value.ToString();
-                //txtRafNo.Text = selected["kitapRafNo"].Value.ToString();
-                //txtAciklama.Text = selected["kitapAciklama"].Value.ToString();
-                //    txtKitapBarkodNo.Text = selected["barkodNo"].Value.ToString();
-                //    txtYazari.Text = selected["soyad"].Value.ToString();
-                //    numSayfaSayisi.Value = int.Parse(selected["yas"].Value.ToString());
-                //    cmbTürü.Text = selected["cinsiyet"].Value.ToString();
-                //    txtRafNo.Text = selected["telefon"].Value.ToString();
-                //    txtAciklama.Text = selected["adres"].Value.ToString();
-                //    //txtEposta.Text = selected["eposta"].Value.ToString();
-                //    numStokSayisi.Value = int.Parse(selected["okunanKitapSayisi"].Value.ToString());
             }
             catch (Exception) { }
         }
@@ -153,7 +136,7 @@ namespace KutuphaneTakip.Formlar.EmanetKitap
             }
             catch (Exception err)
             {
-                MessageBox.Show("Hata! "+err.Message);
+                MessageBox.Show("Hata! " + err.Message);
 
             }
         }
@@ -164,21 +147,18 @@ namespace KutuphaneTakip.Formlar.EmanetKitap
             {
                 if (data.ContainsKey("barkodNo"))
                 {
-                    string tcNo = "";
-                    if (data.ContainsKey("tcNo"))
-                    {
-                        tcNo = data["tcNo"];
-                        data.Remove("tcNo");
-                    }
-                    accdb.ExecuteQuery(accdb.CreateInsertIntoQueryString("sepet", data));
-                    if (data.ContainsKey("tcNo"))
-                        data["tcNo"] = tcNo;
+                    accdb.ExecuteQuery(accdb.CreateInsertIntoQueryString("sepet", dataSepet));
                     btnYenile_Click(null, null);
+                    return;
                 }
+                MessageBox.Show("Hata! Bir kitap seçmelisiniz.");
             }
             catch (Exception err)
             {
-                MessageBox.Show("Hata! Bir kitap aynı anda 2 defa sepete eklenemez.");
+                if (err.Message.ToLower().Contains("primary") || err.Message.ToLower().Contains("birincil"))
+                    MessageBox.Show("Hata! Bir kitap aynı anda 2 defa sepete eklenemez.");
+                else
+                    MessageBox.Show("Hata! " + err.Message);
             }
         }
 
@@ -191,13 +171,19 @@ namespace KutuphaneTakip.Formlar.EmanetKitap
                 {
                     MessageBox.Show("Hata! Sepet boş.");
                     return;
-                } else if (dt.Rows.Count > 3)
+                }
+                else if (dt.Rows.Count > 3)
                 {
                     MessageBox.Show("Hata! Bir kullanıcı en fazla \"3\" emanet kitap edinebilir. Lütfen sepetten eşya siliniz.");
                     return;
                 }
+                if (data["tcNo"] == "")
+                {
+                    MessageBox.Show("Hata! Lütfen kitabı teslim etmek için bir üye seçin.");
+                    return;
+                }
                 string barkodNo = data["barkodNo"];
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                 {
                     data["barkodNo"] = dt.Rows[i].Field<string>("Sepet.barkodNo");
                     accdb.ExecuteQuery(accdb.CreateInsertIntoQueryString("emanet-kitaplar", data));
@@ -217,5 +203,6 @@ namespace KutuphaneTakip.Formlar.EmanetKitap
         {
             new Formlar.EmanetKitapGoruntule.EmanetKitapGoruntule(accdb).ShowDialog();
         }
+
     }
 }

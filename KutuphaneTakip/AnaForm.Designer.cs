@@ -35,8 +35,8 @@
             this.btnUyeEkleme = new System.Windows.Forms.Button();
             this.btnKitapEkleme = new System.Windows.Forms.Button();
             this.btnEmanetKitapVerme = new System.Windows.Forms.Button();
-            this.btnGrafikler = new System.Windows.Forms.Button();
-            this.btnSiralama = new System.Windows.Forms.Button();
+            this.btnKitapSiralama = new System.Windows.Forms.Button();
+            this.btnUyeSiralama = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -126,35 +126,35 @@
             this.btnEmanetKitapVerme.UseVisualStyleBackColor = false;
             this.btnEmanetKitapVerme.Click += new System.EventHandler(this.btnEmanetKitap_Click);
             // 
-            // btnGrafikler
+            // btnKitapSiralama
             // 
-            this.btnGrafikler.BackColor = System.Drawing.Color.DimGray;
-            this.btnGrafikler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGrafikler.ForeColor = System.Drawing.Color.Chartreuse;
-            this.btnGrafikler.Location = new System.Drawing.Point(66, 348);
-            this.btnGrafikler.Name = "btnGrafikler";
-            this.btnGrafikler.Size = new System.Drawing.Size(280, 30);
-            this.btnGrafikler.TabIndex = 11;
-            this.btnGrafikler.Text = "Grafikler";
-            this.btnGrafikler.UseVisualStyleBackColor = false;
-            this.btnGrafikler.Click += new System.EventHandler(this.btnGrafikler_Click);
+            this.btnKitapSiralama.BackColor = System.Drawing.Color.DimGray;
+            this.btnKitapSiralama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKitapSiralama.ForeColor = System.Drawing.Color.Chartreuse;
+            this.btnKitapSiralama.Location = new System.Drawing.Point(66, 348);
+            this.btnKitapSiralama.Name = "btnKitapSiralama";
+            this.btnKitapSiralama.Size = new System.Drawing.Size(280, 30);
+            this.btnKitapSiralama.TabIndex = 11;
+            this.btnKitapSiralama.Text = "Kitap Sıralama";
+            this.btnKitapSiralama.UseVisualStyleBackColor = false;
+            this.btnKitapSiralama.Click += new System.EventHandler(this.btnGrafikler_Click);
             // 
-            // btnSiralama
+            // btnUyeSiralama
             // 
-            this.btnSiralama.BackColor = System.Drawing.Color.DimGray;
-            this.btnSiralama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSiralama.ForeColor = System.Drawing.Color.Chartreuse;
-            this.btnSiralama.Location = new System.Drawing.Point(66, 308);
-            this.btnSiralama.Name = "btnSiralama";
-            this.btnSiralama.Size = new System.Drawing.Size(280, 30);
-            this.btnSiralama.TabIndex = 10;
-            this.btnSiralama.Text = "Sıralama";
-            this.btnSiralama.UseVisualStyleBackColor = false;
-            this.btnSiralama.Click += new System.EventHandler(this.btnSiralama_Click);
+            this.btnUyeSiralama.BackColor = System.Drawing.Color.DimGray;
+            this.btnUyeSiralama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUyeSiralama.ForeColor = System.Drawing.Color.Chartreuse;
+            this.btnUyeSiralama.Location = new System.Drawing.Point(66, 308);
+            this.btnUyeSiralama.Name = "btnUyeSiralama";
+            this.btnUyeSiralama.Size = new System.Drawing.Size(280, 30);
+            this.btnUyeSiralama.TabIndex = 10;
+            this.btnUyeSiralama.Text = "Üye Sıralama";
+            this.btnUyeSiralama.UseVisualStyleBackColor = false;
+            this.btnUyeSiralama.Click += new System.EventHandler(this.btnSiralama_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -164,7 +164,7 @@
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.SystemColors.Control;
+            this.button9.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.ForeColor = System.Drawing.Color.IndianRed;
@@ -192,8 +192,8 @@
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(414, 406);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnGrafikler);
-            this.Controls.Add(this.btnSiralama);
+            this.Controls.Add(this.btnKitapSiralama);
+            this.Controls.Add(this.btnUyeSiralama);
             this.Controls.Add(this.btnEmanetKitapVerme);
             this.Controls.Add(this.btnKitapEkleme);
             this.Controls.Add(this.btnUyeEkleme);
@@ -220,8 +220,8 @@
         private System.Windows.Forms.Button btnUyeEkleme;
         private System.Windows.Forms.Button btnKitapEkleme;
         private System.Windows.Forms.Button btnEmanetKitapVerme;
-        private System.Windows.Forms.Button btnGrafikler;
-        private System.Windows.Forms.Button btnSiralama;
+        private System.Windows.Forms.Button btnKitapSiralama;
+        private System.Windows.Forms.Button btnUyeSiralama;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label5;
